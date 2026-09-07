@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#7c3aed" />
+
+    <title>Random Group Generator — split a list into fair teams</title>
+    <meta
+      name="description"
+      content="Paste a list of names and split them into random, evenly-sized groups. Choose the number of groups or the people per group. Fairly shuffled with your device's secure random generator. Runs in your browser, no sign-up."
+    />
+    <link rel="canonical" href="https://group-generator.correia95.workers.dev/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Random Group Generator" />
+    <meta property="og:description" content="Split a list of names into random, evenly-sized groups — teams, breakout rooms, pairs. Choose group count or group size. Free, no sign-up." />
+    <meta property="og:url" content="https://group-generator.correia95.workers.dev/" />
+    <meta property="og:image" content="https://group-generator.correia95.workers.dev/og.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Random Group Generator" />
+    <meta name="twitter:description" content="Split a list of names into random, evenly-sized groups. Choose group count or group size." />
+    <meta name="twitter:image" content="https://group-generator.correia95.workers.dev/og.svg" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Random Group Generator",
+        "url": "https://group-generator.correia95.workers.dev/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "description": "Split a list of names into random, evenly-sized groups by group count or group size, using the browser's secure random generator."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I split a list of people into random groups?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Paste the names, one per line or comma-separated, choose how many groups you want (or how many people per group), and press Shuffle. The names are randomly shuffled and dealt out evenly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are the groups the same size?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "As close as possible. Names are dealt round-robin, so if the total doesn't divide evenly the groups differ by at most one person."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the shuffle actually random?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. It uses a Fisher-Yates shuffle with crypto.getRandomValues and rejection sampling, so there is no modulo bias and every arrangement is equally likely."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I share the list?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Copy a link to this list packs the names into the URL. The link restores the roster, not a particular split, so opening it and pressing Shuffle gives a fresh random grouping."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <noscript>
+      <p style="text-align: center; padding: 20px">
+        This group generator needs JavaScript. Paste a list of names and it splits them into random,
+        evenly-sized groups by group count or group size.
+      </p>
+    </noscript>
+  </body>
+</html>
